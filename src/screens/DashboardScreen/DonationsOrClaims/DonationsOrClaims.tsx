@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useIsFocused } from 'react-navigation-hooks';
-import { ScrollView, View, Text } from 'react-native';
+import { ScrollView, View, Text, Image } from 'react-native';
 import { Divider } from 'react-native-paper';
 import useGlobal from '@state';
 import { SpacerInline } from '@elements';
 import DonationOrClaim from './DonationOrClaim';
+import styles from './NoDonations.styles'
 
 interface LocalProps {
 	resource: 'donations' | 'claims';
@@ -24,7 +25,7 @@ export default ({ resource }: LocalProps) => {
 		const method = userIdentity === 'client' && resource === 'donations' ? getActiveDonationsForClient : getDonationsOrClaims;
 		const data = await method(resource);
 		if (data) {
-			await setDonationsOrClaims(data);
+			await setDonationsOrClaims(getDonationsOrClaims);
 			setLoaded(true);
 		}
 	};
@@ -60,10 +61,10 @@ export default ({ resource }: LocalProps) => {
 			</ScrollView>
 		)
 		: (
-			<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-				<View>
-					<Text>No donations to display</Text>
-				</View>
-			</View>
+			<View style={styles.container}>
+		    <Image source={require('@assets/images/banana1.png')} />
+				<SpacerInline height={40}/>
+		    <Text style={styles.text}>{("You currently don't have any donations.").toUpperCase()}</Text>
+	  </View>
 		);
 };

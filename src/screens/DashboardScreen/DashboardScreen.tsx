@@ -11,7 +11,7 @@ const DashboardScreen = () => {
 	const { navigate } = useNavigation();
 	const [ state ] = useGlobal();
 	const { userIdentity } = state;
-	const title = userIdentity === 'donor' ? 'My Donations.' : 'Open Donations.';
+	const title = userIdentity === 'donor' ? 'Donations' : 'Open Donations';
 
 	return (
 		<View style={styles.outerContainer}>
