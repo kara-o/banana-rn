@@ -17,6 +17,7 @@ const DashboardScreen = () => {
 		<View style={styles.outerContainer}>
 			<View>
 				<Header showBackButton={false} />
+				<SpacerInline height={20} />
 				<Title text={title} />
 				<SpacerInline height={20} />
 			</View>
