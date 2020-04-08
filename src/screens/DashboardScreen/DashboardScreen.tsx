@@ -11,14 +11,13 @@ const DashboardScreen = () => {
 	const { navigate } = useNavigation();
 	const [ state ] = useGlobal();
 	const { userIdentity } = state;
-	const title = userIdentity === 'donor' ? 'Donations' : 'Open Donations';
 
 	return (
 		<View style={styles.outerContainer}>
 			<View>
 				<Header showBackButton={false} />
 				<SpacerInline height={20} />
-				<Title text={title} />
+				<Title text='Donations' />
 				<SpacerInline height={20} />
 			</View>
 

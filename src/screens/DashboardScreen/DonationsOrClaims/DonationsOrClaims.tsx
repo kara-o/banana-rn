@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useIsFocused } from 'react-navigation-hooks';
-import { ScrollView, View, Text, Image } from 'react-native';
+import { ScrollView, View, Text } from 'react-native';
 import { Divider } from 'react-native-paper';
 import useGlobal from '@state';
 import { SpacerInline } from '@elements';
 import DonationOrClaim from './DonationOrClaim';
-import styles from './NoDonations.styles'
+import NoDonations from '../NoDonations/NoDonations'
 
 interface LocalProps {
 	resource: 'donations' | 'claims';
@@ -61,10 +61,6 @@ export default ({ resource }: LocalProps) => {
 			</ScrollView>
 		)
 		: (
-			<View style={styles.container}>
-		    <Image source={require('@assets/images/banana1.png')} />
-				<SpacerInline height={40}/>
-		    <Text style={styles.text}>{("You currently don't have any donations.").toUpperCase()}</Text>
-	  </View>
+		    <NoDonations />	  
 		);
 };
