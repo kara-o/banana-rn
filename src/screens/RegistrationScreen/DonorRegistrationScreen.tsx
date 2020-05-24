@@ -145,7 +145,7 @@ export default () => {
 						style={styles.text}
 						onPress={toggleTermsOfService}
 					>
-					Accept
+						Accept
 					</Text>
 					<SpacerInline width={10} />
 					<View style={{ top: 11 }}>

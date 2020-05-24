@@ -16,3 +16,5 @@ src/util/environment.ts
 
 # idea
 .idea/*
+
+.vscode
