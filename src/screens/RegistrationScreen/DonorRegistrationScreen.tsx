@@ -22,19 +22,19 @@ import styles from './RegistrationScreen.styles';
 
 export default () => {
 	const { navigate } = useNavigation();
-	const [_state, actions] = useGlobal() as any;
+	const [ _state, actions ] = useGlobal() as any;
 	const { register } = actions;
 
-	const [city, setCity] = useState('');
-	const [email, setEmail] = useState('');
-	const [image, setImage] = useState({} as ImageInfo);
-	const [license, setLicense] = useState('');
-	const [organizationName, setOrganizationName] = useState('');
-	const [password, setPassword] = useState('');
-	const [street, setStreet] = useState('');
-	const [state, _setState] = useState('WA');
-	const [termsOfService, setTermsOfService] = useState(false);
-	const [zip, setZip] = useState('');
+	const [ city, setCity ] = useState('');
+	const [ email, setEmail ] = useState('');
+	const [ image, setImage ] = useState({} as ImageInfo);
+	const [ license, setLicense ] = useState('');
+	const [ organizationName, setOrganizationName ] = useState('');
+	const [ password, setPassword ] = useState('');
+	const [ street, setStreet ] = useState('');
+	const [ state, _setState ] = useState('WA');
+	const [ termsOfService, setTermsOfService ] = useState(false);
+	const [ zip, setZip ] = useState('');
 
 	const toggleTermsOfService = () => setTermsOfService(!termsOfService);
 
